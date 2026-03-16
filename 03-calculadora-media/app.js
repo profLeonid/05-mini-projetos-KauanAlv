@@ -12,7 +12,6 @@ function calcularMedia() {
     const resultado = document.getElementById('resultado')
     let media = ''
     let mensagemSituacao = ''
-    let situacao = ''
 
     media = ((Number(nt1.value) + Number(nt2.value) + Number(nt3.value)) / 3).toFixed(2)
 
