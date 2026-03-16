@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classificador de animal</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="./app.js" defer></script>
+</head>
+
+<body>
+
+    <main>
+        <div class="conteudo">
+
+            <a href="../index.html" class="voltar">← Voltar</a>
+
+            <h1>
+                Classificador de
+                <span>Animal</span>
+            </h1>
+            <p class="descricao">Informe as classificações para descobrir o animal.</p>
+
+            <label>Tipo</label>
+            <select id="tipagem" required>
+                <option value="" disabled selected hidden>escolha vertebrado ou invertebrado</option>
+                <option id="vert" value="vertebrado">Vertebrado</option>
+                <option id="invert" value="invertebrado">Invertebrado</option>
+            </select>
+
+            <label>Classe</label>
+            <select id="classe" required>
+                <option value="">escolha a classe</option>
+            </select>
+
+
+
+            <button onclick="classificarAnimal()">Classificar o animal</button>
+
+            <div id="resultado" class="resultado">
+                O resultado aparecerá aqui
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>Prof. Fernando Leonid</p>
+    </footer>
+
+</body>
+
+</html>
