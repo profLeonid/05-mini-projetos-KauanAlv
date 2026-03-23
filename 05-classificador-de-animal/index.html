@@ -24,17 +24,20 @@
 
             <label>Tipo</label>
             <select id="tipagem" required>
-                <option value="" disabled selected hidden>escolha vertebrado ou invertebrado</option>
+                <option value="" disabled selected hidden>Selecione vertebrado ou invertebrado</option>
                 <option id="vert" value="vertebrado">Vertebrado</option>
                 <option id="invert" value="invertebrado">Invertebrado</option>
             </select>
 
             <label>Classe</label>
             <select id="classe" required>
-                <option value="">escolha a classe</option>
+                <option value="" disabled selected hidden>Selecione uma classe</option>
             </select>
 
-
+            <label>Classificação</label>
+            <select id="classificacao" required>
+                <option value="" disabled selected hidden>Selecione uma classificação</option>
+            </select>
 
             <button onclick="classificarAnimal()">Classificar o animal</button>
 

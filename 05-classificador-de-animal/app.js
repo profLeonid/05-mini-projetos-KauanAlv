@@ -1,28 +1,102 @@
 'use strict'
 
 const dados = {
-    vertebrado: ["Ave", "Mamífero"],
-    invertebrado: ["Inseto", "Anelideo"]
+    "vertebrado": ["Ave", "Mamifero"],
+    "ave": ["Carnivoro", "Onivoro"],
+    "mamifero": ["Onivoro", "Herbivoro"],
+    "invertebrado": ["Inseto", "Anelideo"],
+    "inseto": ["Hematofago", "Herbivoro"],
+    "anelideo": ["Hematofago", "Onivoro"]
 }
 
-const selectTipagem = document.getElementById('tipagem')
-const selectClasse = document.getElementById('classe')
+const animalClassificado = {
+    "vertebrado": {
+        "ave": {
+            "carnivoro": "Águia",
+            "onivoro": "Pomba"
+        },
+        "mamifero": {
+            "onivoro": "Homem",
+            "herbivoro": "Vaca"
+        }
+    },
+    "invertebrado": {
+        "inseto": {
+            "hematofago": "Pulga",
+            "herbivoro": "Lagarta"
+        },
+        "anelideo": {
+            "hematofago": "Sanguessuga",
+            "onivoro": "Minhoca"
+        }
+    }
 
-selectTipagem.addEventListener('change', function(){
-    const tipagemSelecionada = this.value
+}
 
-    selectClasse.textContent = '<option value ="">escolha a classe</option>'
+const tipoEscolhido = document.getElementById("tipagem")
+const classeEscolhida = document.getElementById("classe")
+const classificacaoEscolhida = document.getElementById("classificacao")
 
-    if (tipagemSelecionada && dados[tipagemSelecionada]) {
-        selectClasse.disable = false
+tipoEscolhido.addEventListener("change", function () {
+    const tipoSelecionado = this.value.toLowerCase()
 
-        dados[tipagemSelecionada].forEach(classe => {
-            const option = document.createElement('option')
-            option.value = classe.toLowerCase()
+    classeEscolhida.innerHTML = '<option value="" selected disabled>Selecione uma classe</option>'
+
+    if (tipoSelecionado && dados[tipoSelecionado]) {
+        classeEscolhida.disabled = false
+
+        dados[tipoSelecionado].forEach(function (classe) {
+            const option = document.createElement("option")
             option.text = classe
-            selectClasse.add(option)
+            option.value = classe.toLowerCase()
+            classeEscolhida.add(option)
         })
+
     } else {
-        selectClasse.disable = true
+        classeEscolhida.disabled = true
     }
 })
+
+classeEscolhida.addEventListener("change", function () {
+    const classeSelecionada = this.value.toLowerCase()
+
+    classificacaoEscolhida.innerHTML = '<option value="" selected disabled>Selecione uma classificação</option>'
+
+    if (classeSelecionada && dados[classeSelecionada]) {
+        classificacaoEscolhida.disabled = false
+
+        dados[classeSelecionada].forEach(function (classificacao) {
+            const option = document.createElement("option")
+            option.text = classificacao
+            option.value = classificacao.toLowerCase()
+            classificacaoEscolhida.add(option)
+        })
+
+    } else {
+        classificacaoEscolhida.disabled = true
+    }
+})
+
+function classificarAnimal() {
+    const coluna = tipoEscolhido.value
+    const tipo = classeEscolhida.value
+    const dieta = classificacaoEscolhida.value
+
+    const resultado = document.getElementById("resultado")
+
+    if (!coluna || !tipo || !dieta) {
+        resultado.textContent = "Selecione todas as opções"
+        return
+    }
+
+    let animal = ''
+    if (
+        animalClassificado[coluna] &&
+        animalClassificado[coluna][tipo] &&
+        animalClassificado[coluna][tipo][dieta]
+    ) {
+        animal = animalClassificado[coluna][tipo][dieta]
+    }
+
+    resultado.textContent = animal || "Combinação não encontrada"
+}
