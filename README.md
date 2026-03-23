@@ -93,21 +93,23 @@ Você deve criar um app que classifique o animal de acordo com a ordem escolhida
 - Classifique-o como; Ave ou Mamifero
 - Ave; Carnivoro ou Onivoro
 - Mamifero; Onivoro ou Herbivoro
-
+- ㅤ
 - Se for Invertebrado:
 - Classifique-o como; Inseto ou Anelideo
 - Inseto; Hematofago ou Herbivoro
 - Anelideo; Hematofago ou Onivoro
 
-- O nome do animal deve ser de acordo com a sequência:
-- Vertebrado -      Ave - Carnivoro:  Águia
-- Vertebrado -      Ave -   Onivoro:  Pomba
-- Vertebrado - Mamifero -   Onivoro:  Homem
-- Vertebrado - Mamifero - Herbivoro:  Vaca
-- Invertebrado -      Ave - Carnivoro:  Águia
-- Invertebrado -      Ave -   Onivoro:  Pomba
-- Invertebrado - Mamifero -   Onivoro:  Homem
-- Invertebrado - Mamifero - Herbivoro:  Vaca
+**O nome do animal deve ser de acordo com a sequência:**
+
+1. Vertebrado   -      Ave - Carnivoro:  Águia
+2. Vertebrado   -      Ave -   Onivoro:  Pomba
+3. Vertebrado   - Mamifero -   Onivoro:  Homem
+4. Vertebrado   - Mamifero - Herbivoro:  Vaca
+-
+5. Invertebrado -   Inseto - Hematofago:  Pulga
+6. Invertebrado -   Inseto -  Herbivoro:  Lagarta
+7. Invertebrado - Anelideo - Hematofago:  Sanguessuga
+8. Invertebrado - Anelideo -    Onivoro:  Minhoca
 
 ---
 
